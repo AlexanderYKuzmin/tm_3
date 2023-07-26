@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_objects"
+    >
+
+    <fragment
+        android:id="@+id/navigation_objects"
+        android:name="com.kuzmin.tm_3.ui.nav_objects.NavObjectsFragment"
+        tools:layout="@layout/fragment_nav_objects" >
+        <!--<action
+            android:id="@+id/action_navigation_chat_to_single_chat"
+            app:destination="@id/single_chat"
+            app:popUpTo="@id/navigation_chat" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_measurements"
+        android:name="com.kuzmin.tm_3.ui.nav_measurements.NavMeasurementsFragment"
+        tools:layout="@layout/fragment_nav_measurements" >
+        <!--<action
+            android:id="@+id/action_navigation_chat_to_single_chat"
+            app:destination="@id/single_chat"
+            app:popUpTo="@id/navigation_chat" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.kuzmin.tm_3.ui.nav_report.NavReportFragment"
+        tools:layout="@layout/fragment_nav_report" >
+        <!--<action
+            android:id="@+id/action_navigation_chat_to_single_chat"
+            app:destination="@id/single_chat"
+            app:popUpTo="@id/navigation_chat" />-->
+    </fragment>
+</navigation>

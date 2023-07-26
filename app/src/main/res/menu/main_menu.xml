@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <group>
+        <item
+            android:id="@+id/mm_new"
+            android:title="@string/main_menu_new"/>
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/mm_load_local"
+            android:title="@string/main_menu_load_local"/>
+
+        <item
+            android:id="@+id/mm_load_server"
+            android:title="@string/main_menu_load_server"/>
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/mm_save_local"
+            android:title="@string/main_menu_save_local"/>
+
+        <item
+            android:id="@+id/mm_save_server"
+            android:title="@string/main_menu_save_server"/>
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/mm_sync"
+            android:title="@string/main_menu_sync"/>
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/mm_quit"
+            android:title="@string/main_menu_quit"/>
+    </group>
+</menu>

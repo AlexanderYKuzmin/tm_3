@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_objects"
+        android:icon="@drawable/ic_baseline_cell_tower_24"
+        android:title="@string/objects" />
+
+    <item
+        android:id="@+id/navigation_measurements"
+        android:icon="@drawable/ic_baseline_format_line_spacing_24"
+        android:title="@string/measurements" />
+
+    <item
+        android:id="@+id/navigation_report"
+        android:icon="@drawable/ic_baseline_art_track_24"
+        android:title="@string/report" />
+</menu>
