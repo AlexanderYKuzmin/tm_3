@@ -11,9 +11,8 @@
         android:id="@+id/rvNavObjects"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="56dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_object"/>
+        tools:listitem="@layout/item_building"/>
 
     <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtn_add_contact"
