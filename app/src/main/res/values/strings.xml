@@ -11,10 +11,9 @@
     <string name="main_menu_load_server">Найти на сервере</string>
     <string name="main_menu_save_local">Сохранить на устройство</string>
     <string name="main_menu_save_server">Сохранить на сервере</string>
+    <string name="main_menu_preferences">Настройки</string>
     <string name="main_menu_sync">Синхронизировать</string>
     <string name="main_menu_quit">Выйти</string>
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->

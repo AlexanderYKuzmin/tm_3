@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group>
         <item
             android:id="@+id/mm_new"
+            android:icon="@drawable/ic_baseline_domain_add_24"
+            app:showAsAction="ifRoom"
             android:title="@string/main_menu_new"/>
     </group>
 
@@ -28,6 +30,9 @@
     </group>
 
     <group>
+        <item
+            android:id="@+id/mm_pref"
+            android:title="@string/main_menu_preferences"/>
         <item
             android:id="@+id/mm_sync"
             android:title="@string/main_menu_sync"/>

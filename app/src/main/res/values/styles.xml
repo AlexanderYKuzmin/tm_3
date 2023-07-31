@@ -6,19 +6,21 @@
         <item name="colorOnPrimary">@color/color_on_primary</item>
         <item name="colorSurface">@color/color_surface</item>
         <item name="colorControlNormal">@color/color_on_primary</item>
+        <item name="itemTextColor">@color/color_on_surface</item>
         <item name="android:dividerHeight">2dp</item>
         <item name="android:divider">@color/black</item>
-        <item name="android:itemBackground">@color/color_primary_dark</item>
     </style>
 
     <style name="TmToolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
-        <item name="titleTextColor">@color/color_gray_light</item>
+        <item name="titleTextColor">@color/color_on_primary</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
     </style>
 
     <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
         <!--<item name="android:backgroundTint">?attr/colorOnPrimary</item>-->
+        <item name="itemBackground">@color/color_container</item>
         <item name="itemIconTint">@color/tint_color</item>
+        <item name="itemTextColor">@color/tint_color</item>
         <item name="android:backgroundTint">@color/tint_color</item>
 
     </style>

@@ -14,6 +14,9 @@
             android:id="@+id/action_navigation_chat_to_single_chat"
             app:destination="@id/single_chat"
             app:popUpTo="@id/navigation_chat" />-->
+        <action
+            android:id="@+id/action_navigation_objects_to_building"
+            app:destination="@id/building" />
     </fragment>
 
     <fragment
@@ -35,4 +38,9 @@
             app:destination="@id/single_chat"
             app:popUpTo="@id/navigation_chat" />-->
     </fragment>
+    <fragment
+        android:id="@+id/building"
+        android:name="com.kuzmin.tm_3.ui.nav_objects.BuildingFragment"
+        android:label="fragment_building"
+        tools:layout="@layout/fragment_building" />
 </navigation>
