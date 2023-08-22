@@ -5,20 +5,18 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.sql.Date
 
-@Entity
+@Entity(tableName = "photos")
 data class PhotoDb(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
 
-    @ColumnInfo
     val name: String,
 
-    @ColumnInfo
-    val date: Date,
+    val date: String, // dd.MM.yyyy
 
     @ColumnInfo(name = "ftp_url")
     val ftpUrl: String,
 
-    @ColumnInfo(name = "building_id")
-    val buildingId: Long,
+    @ColumnInfo(name = "site_id")
+    val siteId: Long
 )

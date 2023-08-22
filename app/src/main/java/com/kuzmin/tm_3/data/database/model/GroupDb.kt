@@ -4,25 +4,22 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "sections")
-data class SectionDb(
+@Entity("measure_groups")
+data class GroupDb(
 
     @PrimaryKey(autoGenerate = true)
     val id: Long,
 
-    val index: Int,
+    @ColumnInfo(name = "group_num")
+    val groupNum: Int,
 
-    @ColumnInfo(name = "w_bottom")
-    val wBottom: Int,
+    val azimuth: Int,
 
-    @ColumnInfo(name = "w_top")
-    val wTop: Int,
+    @ColumnInfo(name = "theo_distance")
+    val theoDistance: Int,
 
-    @ColumnInfo
-    val height: Int,
-
-    @ColumnInfo
-    val level: Int,
+    @ColumnInfo(name = "theo_distance")
+    val theoHeight: Int,
 
     @ColumnInfo(name = "building_id")
     val buildingId: Long

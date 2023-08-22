@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.kuzmin.tm_3.data.database.model.*
 
-@Database(entities = [BuildingDb::class, SectionDb::class, MeasurementDb::class, ResultDb::class, PhotoDb::class], version = 1)
+@Database(entities = [ConstructionDb::class, SectionDb::class, MeasurementDb::class, ResultDb::class, PhotoDb::class], version = 1)
 abstract class TmDatabase : RoomDatabase(){
     companion object {
 
@@ -32,5 +32,5 @@ abstract class TmDatabase : RoomDatabase(){
         }
     }
 
-    abstract fun chatContactsDao(): TmDao
+    abstract fun tmDao(): TmDao
 }

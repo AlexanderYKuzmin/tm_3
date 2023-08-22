@@ -1,13 +1,16 @@
 package com.kuzmin.tm_3.ui
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.os.bundleOf
 import androidx.core.view.MenuCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,11 +18,27 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kuzmin.tm_3.R
+import com.kuzmin.tm_3.TmApp
 import com.kuzmin.tm_3.databinding.ActivityMainBinding
 import com.kuzmin.tm_3.extensions.dpToIntPx
+import com.kuzmin.tm_3.ui.nav_objects.NavObjectsFragment
+import com.kuzmin.tm_3.ui.nav_objects.NavObjectsFragment.Companion.BUILDING_LIST
+import java.util.ArrayList
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val viewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[MainActivityViewModel::class.java]
+    }
+
+    private val appComponent by lazy {
+        (application as TmApp).component
+    }
 
     private val navController: NavController by lazy {
         findNavController(R.id.nav_host_fragment_activity_main)
@@ -27,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        appComponent.inject(this)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -44,6 +64,10 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        //val startFragmentBundle = Bundle()
+        val startFragmentBundle = bundleOf(BUILDING_LIST to viewModel.getBuildingList())
+        navController.setGraph(navController.graph, startFragmentBundle)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -103,4 +127,7 @@ class MainActivity : AppCompatActivity() {
             logo.layoutParams = it
         }
     }
+
+
+
 }

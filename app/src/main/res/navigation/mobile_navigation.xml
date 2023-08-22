@@ -10,13 +10,13 @@
         android:id="@+id/navigation_objects"
         android:name="com.kuzmin.tm_3.ui.nav_objects.NavObjectsFragment"
         tools:layout="@layout/fragment_nav_objects" >
-        <!--<action
-            android:id="@+id/action_navigation_chat_to_single_chat"
-            app:destination="@id/single_chat"
-            app:popUpTo="@id/navigation_chat" />-->
+
         <action
-            android:id="@+id/action_navigation_objects_to_building"
+            android:id="@+id/action_navigation_objects_to_nav_building"
             app:destination="@id/nav_building" />
+        <argument
+            android:name="buildings"
+            app:argType="com.kuzmin.tm_3.domain.model.BuildingSimple[]" />
     </fragment>
 
     <fragment
@@ -42,5 +42,10 @@
         android:id="@+id/nav_building"
         android:name="com.kuzmin.tm_3.ui.nav_objects.BuildingFragment"
         android:label="fragment_building"
-        tools:layout="@layout/fragment_building" />
+        tools:layout="@layout/fragment_building" >
+        <argument
+            android:name="building_id"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
 </navigation>

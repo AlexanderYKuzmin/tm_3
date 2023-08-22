@@ -6,48 +6,17 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "measurements")
 data class MeasurementDb(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
 
-    @ColumnInfo
-    val number: Int,
-
-    @ColumnInfo
-    val side: Int,
-
-    @ColumnInfo
     val circle: String,
 
-    @ColumnInfo
+    @ColumnInfo(name = "left_angle")
     val left: Double,
 
-    @ColumnInfo
+    @ColumnInfo(name = "right_angle")
     val right: Double,
 
-    @ColumnInfo(name = "theo_height")
-    val theoHeight: Int,
-
-    @ColumnInfo
-    val distance: Int,
-
-    @ColumnInfo
-    val baseTop: String,
-
-    @ColumnInfo(name = "sec_num")
-    val secNum: Int,
-
-    @ColumnInfo
-    val azimuth: Int,
-
-    @ColumnInfo
-    val contractor: String,
-
-    @ColumnInfo(name = "building_id")
-    val buildingId: Long,
-
-    @ColumnInfo(name = "sections_id")
-    val sectionId: Long,
-
-    @ColumnInfo(name = "results_id")
-    val resultId: Long
+    @ColumnInfo(name = "group_id")
+    val groupId: Int
 )
