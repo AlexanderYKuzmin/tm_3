@@ -10,14 +10,14 @@ data class ResultDb(
     @PrimaryKey
     val id: Long,
 
-    @ColumnInfo(name = "average_kl")
-    val averageKl: Double,
+    @ColumnInfo(name = "average_cl")
+    val averageCl: Double,
 
-    @ColumnInfo(name = "average_kr")
-    val averageKr: Double,
+    @ColumnInfo(name = "average_cr")
+    val averageCr: Double,
 
-    @ColumnInfo(name = "average_kl_kr")
-    val averageKlKr: Double,
+    @ColumnInfo(name = "average_cl_cr")
+    val averageClCr: Double,
 
     @ColumnInfo(name = "shift_deg")
     val shiftDeg: Double,
@@ -41,14 +41,11 @@ data class ResultDb(
     val betaI: Double,
 
     @ColumnInfo(name = "beta_delta")
-    val betaDelta: Double,
+    val betaDelta: Int,
 
-    @ColumnInfo(name = "measurements_id")
-    val measurementsId: Long,
+    @ColumnInfo(name = "measurement_id")
+    val measurementId: Long,
 
-    @ColumnInfo(name = "sections_id")
-    val sectionsId: Long,
-
-    @ColumnInfo(name = "building_id")
-    val buildingsId: Long
+    @ColumnInfo(name = "measurement_uuid")
+    val measurementUUID: String
 )

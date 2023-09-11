@@ -1,4 +1,4 @@
-package com.kuzmin.tm_3.ui.nav_objects
+package com.kuzmin.tm_3.ui.nav_constructions
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

@@ -9,6 +9,8 @@ data class SiteConfigurationDb(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
 
+    val name: String,
+
     val latitude: Double,
 
     val longitude: Double,
@@ -16,5 +18,8 @@ data class SiteConfigurationDb(
     val type: Int,
 
     @ColumnInfo(name = "type_description")
-    val typeDescription: String
+    val typeDescription: String,
+
+    @ColumnInfo(name = "site_id")
+    val siteId: Long
 )

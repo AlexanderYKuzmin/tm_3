@@ -6,7 +6,7 @@ import com.kuzmin.tm_3.data.database.model.*
 @Dao
 abstract class TmDao {
 
-    @Query("SELECT * FROM buildings")
+    /*@Query("SELECT * FROM buildings")
     abstract suspend fun getAll(): List<BuildingWithSectionsMeasurementsResultsDb>
 
     @Query("SELECT * FROM buildings WHERE id = :id")
@@ -66,6 +66,6 @@ abstract class TmDao {
     }
 
     @Delete
-    abstract fun deleteBuilding(building: ConstructionDb)
+    abstract fun deleteBuilding(building: ConstructionDb)*/
 
 }

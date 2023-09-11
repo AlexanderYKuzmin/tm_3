@@ -1,19 +1,18 @@
-package com.kuzmin.tm_3.ui.nav_objects
+package com.kuzmin.tm_3.ui.nav_constructions
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.kuzmin.tm_3.databinding.ItemBuildingBinding
-import com.kuzmin.tm_3.domain.model.BuildingSimple
+import com.kuzmin.tm_3.databinding.ItemConstructionBinding
+import com.kuzmin.tm_3.domain.model.ConstructionSimple
 import com.kuzmin.tm_3.extensions.formatToDate
 
 class NavObjectsAdapter(
     val context: Context
-) : ListAdapter<BuildingSimple, NavObjectsAdapter.ItemBuildingSimpleViewHolder>(BuildingSimpleDiffCallback) {
+) : ListAdapter<ConstructionSimple, NavObjectsAdapter.ItemBuildingSimpleViewHolder>(BuildingSimpleDiffCallback) {
 
     var onItemBuildingClickListener: ((Long) -> Unit)? = null
 
@@ -21,7 +20,7 @@ class NavObjectsAdapter(
         parent: ViewGroup,
         viewType: Int
     ): ItemBuildingSimpleViewHolder {
-        val binding = ItemBuildingBinding.inflate(
+        val binding = ItemConstructionBinding.inflate(
             LayoutInflater.from(context),
             parent,
             false
@@ -46,14 +45,14 @@ class NavObjectsAdapter(
     }
 
     inner class ItemBuildingSimpleViewHolder(
-        val binding: ItemBuildingBinding
+        val binding: ItemConstructionBinding
     ) : RecyclerView.ViewHolder(binding.root)
 
-    object BuildingSimpleDiffCallback : DiffUtil.ItemCallback<BuildingSimple>(){
-        override fun areItemsTheSame(oldItem: BuildingSimple, newItem: BuildingSimple): Boolean {
+    object BuildingSimpleDiffCallback : DiffUtil.ItemCallback<ConstructionSimple>(){
+        override fun areItemsTheSame(oldItem: ConstructionSimple, newItem: ConstructionSimple): Boolean {
             return oldItem.id == newItem.id
         }
-        override fun areContentsTheSame(oldItem: BuildingSimple, newItem: BuildingSimple): Boolean {
+        override fun areContentsTheSame(oldItem: ConstructionSimple, newItem: ConstructionSimple): Boolean {
             return oldItem == newItem
         }
     }

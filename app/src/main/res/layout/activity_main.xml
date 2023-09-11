@@ -21,7 +21,7 @@
         style="@style/TmToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:logo="@drawable/ic_baseline_android_24"
+        app:logo="@drawable/cell_tower"
         app:title="@string/app_name"
         android:elevation="4dp"
         />

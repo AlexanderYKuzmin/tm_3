@@ -1,6 +1,6 @@
 package com.kuzmin.tm_3.domain.model
 
-enum class BuildingType(value: String) {
+enum class ConstructionType(typeName: String) {
     TOWER("tower"),
     MAST("mast"),
     POLE("pole")

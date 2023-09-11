@@ -1,4 +1,4 @@
-package com.kuzmin.tm_3.ui.nav_objects
+package com.kuzmin.tm_3.ui.nav_constructions
 
 import android.os.Build
 import android.os.Build.VERSION
@@ -10,21 +10,21 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kuzmin.tm_3.R
-import com.kuzmin.tm_3.databinding.FragmentNavObjectsBinding
-import com.kuzmin.tm_3.domain.model.BuildingSimple
-import com.kuzmin.tm_3.ui.nav_objects.BuildingFragment.Companion.BUILDING_ID
+import com.kuzmin.tm_3.databinding.FragmentNavConstructionsBinding
+import com.kuzmin.tm_3.domain.model.ConstructionSimple
+import com.kuzmin.tm_3.ui.nav_constructions.ConstructionFragment.Companion.BUILDING_ID
 
-class NavObjectsFragment : Fragment() {
+class NavSitesListFragment : Fragment() {
 
-    private var _binding: FragmentNavObjectsBinding? = null
+    private var _binding: FragmentNavConstructionsBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var buildingList: List<BuildingSimple>
+    lateinit var buildingList: List<ConstructionSimple>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         buildingList = if (VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            arguments?.getParcelableArrayList(BUILDING_LIST, BuildingSimple::class.java) ?:
+            arguments?.getParcelableArrayList(BUILDING_LIST, ConstructionSimple::class.java) ?:
             listOf()
         } else {
             arguments?.getParcelableArrayList(BUILDING_LIST) ?: listOf()
@@ -36,7 +36,7 @@ class NavObjectsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentNavObjectsBinding.inflate(inflater, container, false)
+        _binding = FragmentNavConstructionsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -53,7 +53,7 @@ class NavObjectsFragment : Fragment() {
 
     fun setOnItemBuildingClickListener(adapter: NavObjectsAdapter) {
         adapter.onItemBuildingClickListener = {
-            findNavController().navigate(R.id.nav_building, bundleOf(BUILDING_ID to it))
+            findNavController().navigate(R.id.nav_construction, bundleOf(BUILDING_ID to it))
         }
     }
 

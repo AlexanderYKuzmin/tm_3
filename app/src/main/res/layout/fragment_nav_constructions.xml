@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".ui.nav_objects.NavObjectsFragment">
+    tools:context=".ui.nav_constructions.NavSitesListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNavObjects"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_building"/>
+        tools:listitem="@layout/item_construction"/>
 
     <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtn_add_contact"

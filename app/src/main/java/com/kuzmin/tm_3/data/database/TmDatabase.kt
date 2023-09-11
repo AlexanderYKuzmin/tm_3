@@ -4,9 +4,24 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.kuzmin.tm_3.data.database.model.*
+import com.kuzmin.tm_3.data.database.type_converters.DateConverter
 
-@Database(entities = [ConstructionDb::class, SectionDb::class, MeasurementDb::class, ResultDb::class, PhotoDb::class], version = 1)
+@Database(entities = [
+    SiteDb::class,
+    SiteEquipmentDb::class,
+    AddressDb::class,
+    SiteConfigurationDb::class,
+    ConstructionDb::class,
+    GroupDb::class,
+    LevelDb::class,
+    SectionDb::class,
+    MeasurementDb::class,
+    ResultDb::class,
+    PhotoDb::class,
+    UserDb::class], version = 2)
+@TypeConverters(DateConverter::class)
 abstract class TmDatabase : RoomDatabase(){
     companion object {
 

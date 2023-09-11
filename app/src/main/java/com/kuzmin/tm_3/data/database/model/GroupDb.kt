@@ -10,6 +10,8 @@ data class GroupDb(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
 
+    val uuid: String,
+
     @ColumnInfo(name = "group_num")
     val groupNum: Int,
 
@@ -18,9 +20,12 @@ data class GroupDb(
     @ColumnInfo(name = "theo_distance")
     val theoDistance: Int,
 
-    @ColumnInfo(name = "theo_distance")
+    @ColumnInfo(name = "theo_height")
     val theoHeight: Int,
 
-    @ColumnInfo(name = "building_id")
-    val buildingId: Long
+    @ColumnInfo(name = "construction_id")
+    val constructionId: Long,
+
+    @ColumnInfo(name = "construction_uuid")
+    val constructionUUID: String
 )

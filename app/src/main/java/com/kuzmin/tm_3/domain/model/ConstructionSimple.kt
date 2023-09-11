@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.util.Date
 
-data class BuildingSimple(
+data class ConstructionSimple(
   val id: Long,
   val name: String,
   val address: String,
@@ -44,12 +44,12 @@ data class BuildingSimple(
     return 0
   }
 
-  companion object CREATOR : Parcelable.Creator<BuildingSimple> {
-    override fun createFromParcel(parcel: Parcel): BuildingSimple {
-      return BuildingSimple(parcel)
+  companion object CREATOR : Parcelable.Creator<ConstructionSimple> {
+    override fun createFromParcel(parcel: Parcel): ConstructionSimple {
+      return ConstructionSimple(parcel)
     }
 
-    override fun newArray(size: Int): Array<BuildingSimple?> {
+    override fun newArray(size: Int): Array<ConstructionSimple?> {
       return arrayOfNulls(size)
     }
   }

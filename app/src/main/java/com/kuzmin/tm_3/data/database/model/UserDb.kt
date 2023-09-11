@@ -4,9 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "users")
 data class UserDb(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
 
     @ColumnInfo(name = "first_name")
@@ -15,12 +15,10 @@ data class UserDb(
     @ColumnInfo(name = "last_name")
     val lastName: String,
 
-    @ColumnInfo
-    val contractor: String,
+    val username: String,
 
-    @ColumnInfo
-    val email: String,
+    val token: String,
 
-    @ColumnInfo
-    val password: String
+    @ColumnInfo(name = "user_id_remote")
+    val userIdRemote: Long
 )

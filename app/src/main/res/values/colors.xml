@@ -12,6 +12,8 @@
     <color name="color_on_surface">#202020</color>
 
     <color name="color_container">#FFC873</color>
+    <color name="color_on_container">#978C73</color>
+    <color name="color_on_container_dark">#A66400</color>
 
     <color name="color_gray">#9ca9ba</color>
     <color name="color_gray_light">#EEEEEE</color>
@@ -23,4 +25,8 @@
     <color name="color_item_building">#9F97F5</color>
     <color name="color_shadow">#D9000000</color>
     <color name="color_on_item_building">#372F85</color>
+
+
+    <!--title color-->
+    <color name="color_title">#5C3904</color>
 </resources>

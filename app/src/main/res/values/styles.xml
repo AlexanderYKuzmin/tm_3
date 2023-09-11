@@ -14,6 +14,7 @@
     <style name="TmToolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="titleTextColor">@color/color_on_primary</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="android:fontFamily">@font/gost_clan_gradient</item>
     </style>
 
     <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">

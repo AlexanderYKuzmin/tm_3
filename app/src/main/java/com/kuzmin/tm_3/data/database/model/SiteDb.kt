@@ -14,5 +14,8 @@ data class SiteDb(
     val description: String,
 
     @ColumnInfo(name = "tenant_id")
-    val tenantId: Long
+    val tenantId: Long,
+
+    @ColumnInfo()
+    val siteRemoteId: Long
 )

@@ -10,7 +10,7 @@ data class SectionDb(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
 
-    val index: Int,
+    val number: Int,
 
     @ColumnInfo(name = "w_bottom")
     val wBottom: Int,
@@ -24,6 +24,9 @@ data class SectionDb(
     @ColumnInfo
     val level: Int,
 
-    @ColumnInfo(name = "building_id")
-    val buildingId: Long
+    @ColumnInfo(name = "construction_id")
+    val constructionId: Long,
+
+    @ColumnInfo(name = "construction_uuid")
+    val constructionUuid: String
 )

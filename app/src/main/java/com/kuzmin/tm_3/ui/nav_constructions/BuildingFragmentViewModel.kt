@@ -1,12 +1,11 @@
-package com.kuzmin.tm_3.ui.nav_objects
+package com.kuzmin.tm_3.ui.nav_constructions
 
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kuzmin.tm_3.data.database.TmDatabase
-import com.kuzmin.tm_3.domain.model.Building
+import com.kuzmin.tm_3.domain.model.Construction
 import com.kuzmin.tm_3.domain.usecases.GetBuildingByArgumentLocalUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,8 +15,8 @@ class BuildingFragmentViewModel @Inject constructor(
     val getBuildingByArgumentLocalUseCase: GetBuildingByArgumentLocalUseCase
 ) : ViewModel() {
 
-    private val _buildingLd = MutableLiveData<Building>()
-    val buildingLd: LiveData<Building> get() = _buildingLd
+    private val _buildingLd = MutableLiveData<Construction>()
+    val buildingLd: LiveData<Construction> get() = _buildingLd
 
     fun getBuildingLocalById(id: Long) {
         viewModelScope.launch {

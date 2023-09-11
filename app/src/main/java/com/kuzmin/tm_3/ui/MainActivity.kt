@@ -1,13 +1,15 @@
 package com.kuzmin.tm_3.ui
 
+import android.graphics.Typeface
 import android.os.Bundle
-import android.os.Parcelable
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.MenuCompat
 import androidx.lifecycle.ViewModelProvider
@@ -21,9 +23,8 @@ import com.kuzmin.tm_3.R
 import com.kuzmin.tm_3.TmApp
 import com.kuzmin.tm_3.databinding.ActivityMainBinding
 import com.kuzmin.tm_3.extensions.dpToIntPx
-import com.kuzmin.tm_3.ui.nav_objects.NavObjectsFragment
-import com.kuzmin.tm_3.ui.nav_objects.NavObjectsFragment.Companion.BUILDING_LIST
-import java.util.ArrayList
+import com.kuzmin.tm_3.ui.nav_constructions.NavSitesListFragment.Companion.BUILDING_LIST
+import com.kuzmin.tm_3.ui.util.AuthValidation
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -66,8 +67,18 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         //val startFragmentBundle = Bundle()
-        val startFragmentBundle = bundleOf(BUILDING_LIST to viewModel.getBuildingList())
+
+        val startFragmentBundle = bundleOf(BUILDING_LIST to viewModel.getConstructionList())
         navController.setGraph(navController.graph, startFragmentBundle)
+
+        viewModel.loadAuthUser()
+        viewModel.authUserData.observe(this) {
+            if (AuthValidation.isTokenValid(it.token, it.dateToken)) {
+                //TODO message network resources available
+                //show everything
+            }
+            else launchAuthFragment()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -87,7 +98,7 @@ class MainActivity : AppCompatActivity() {
                 //viewModel.handleNew()
             }
             R.id.mm_load_server -> {
-                //viewModel.handleSave()
+                viewModel.handleLoadSitesFromServer()
             }
             R.id.mm_save_local -> {
                 //viewModel.handleSave()
@@ -116,7 +127,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val logo = if (binding.toolbar.childCount > 1) binding.toolbar.getChildAt(1) as ImageView else null
-        logo?.scaleType = ImageView.ScaleType.CENTER_CROP
+        logo?.scaleType = ImageView.ScaleType.CENTER_INSIDE
         //logo?.background = getDrawable(R.drawable.ic_launcher_background)
         Log.d("Setup toolbar", "logo = $logo")
         val lp = logo?.layoutParams as? Toolbar.LayoutParams
@@ -126,8 +137,23 @@ class MainActivity : AppCompatActivity() {
             it.marginEnd = dpToIntPx(16)
             logo.layoutParams = it
         }
+
+        val title = binding.toolbar.getChildAt(0) as TextView
+        val titleTypeFace: Typeface = Typeface.createFromAsset(assets, "fonts/gost_clan_gradient.ttf")
+        title.typeface = titleTypeFace
+        title.textSize = 24f
+        title.setTextColor(ContextCompat.getColor(this, R.color.color_title))
     }
 
+    private fun launchAuthFragment() {
+        Log.d(TAG, "Launch login fragment")
 
-
+        /*val bundle = Bundle().apply {
+            putParcelable("auth_user", viewModel.authUserData.value)
+        }*/
+        navController.navigate(R.id.navigation_login)
+    }
+    companion object {
+        const val TAG = "MainActivity"
+    }
 }

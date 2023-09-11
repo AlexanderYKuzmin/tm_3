@@ -5,12 +5,14 @@ import com.kuzmin.tm_3.ui.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 
-@Component(modules = [ViewModelModule::class, DataModule::class])
+@Component(modules = [ViewModelModule::class, DataModule::class, NetworkModule::class])
 interface TmComponent {
 
     fun inject(activity: MainActivity)
 
     fun getBuildingSubComponent(): BuildingSubComponent
+
+    fun getLoginSubComponent(): LoginSubComponent
 
     @Component.Factory
     interface Factory {
